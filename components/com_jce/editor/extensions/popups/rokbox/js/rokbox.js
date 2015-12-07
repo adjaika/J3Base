@@ -1,0 +1,14 @@
+/* RokBox - 2.1.0 | 31 May 2013 | http://www.joomlacontenteditor.net | Copyright (C) 2006 - 2013 Ryan Demmer. All rights reserved | GNU/GPL Version 2 - http://www.gnu.org/licenses/gpl-2.0.html */
+(function(){WFPopups.addPopup('rokbox',{setup:function(){var self=this;},check:function(n){var r=n.getAttribute('rel');if(r&&/rokbox/.test(r)){return true;}
+return!!n.getAttribute('data-rokbox');},remove:function(n){var ed=tinyMCEPopup.editor;var r=ed.dom.getAttrib(n,'rel');if(r&&/rokbox/.test(r)){r=r.replace(/rokbox(.*)\b/,'');ed.dom.setAttrib(n,'rel',r);}
+tinymce.each(['data-rokbox','data-rokbox-caption','data-rokbox-album','data-rokbox-size','data-rokbox-element','data-rokbox-generate-thumbnail'],function(v){if(ed.dom.getAttrib(n,v)){ed.dom.setAttrib(n,v,null);}});},convertData:function(s){var a={};var album=/\(([^\)]+)\)/.exec(s);if(album){a.album=album[1];}
+var dim=/\[([0-9]+%?) ([0-9]+%?)\]/.exec(s);if(dim&&dim.length===3){a.width=dim[1];a.height=dim[2];}
+a.fullscreen=/\[fullscreen\]/.test(s);return a;},getAttributes:function(n){var ed=tinyMCEPopup.editor,args={},v;var data=ed.dom.getAttrib(n,'rel');var title=ed.dom.getAttrib(n,'title');if(data&&/rokbox/.test(data)){data=this.convertData(data);$('#rokbox_caption').val(title);}else if(n.getAttribute('data-rokbox')!=null){data={};$.each(['caption','album','size','element','generate-thumbnail'],function(i,k){v=n.getAttribute('data-rokbox-'+k);if(k=='caption'){v=ed.dom.decode(v);}
+if(k=='size'&&v){v=v.split(' ');data.width=v[0];data.height=v[1]||'';}else{if(v!=null){data[k]=v;}}});}
+$.each(data,function(k,v){var $k=$('#rokbox_'+k.replace('-','_','g'));if($k.is(':checkbox')){$k.prop('checked',true);}else{if(k=='width'||k=='height'){if(/%/.test(v)){v=parseInt(v);$('#rokbox_'+k+'_unit').val('%');}}
+$k.val(v);}});$.extend(args,{src:ed.dom.getAttrib(n,'href')});return args;},setAttributes:function(n,args){var self=this,ed=tinyMCEPopup.editor;this.remove(n);var width=$('#rokbox_width').val();var height=$('#rokbox_height').val();var album=$('#rokbox_album').val();var thubmnail=$('#rokbox_generate_thumbnail').is(':checked');var caption=$('#rokbox_caption').val();var element=$('#rokbox_element').val();if(caption){ed.dom.setAttrib(n,'data-rokbox-caption',ed.dom.encode(caption));}
+if(width&&height){ed.dom.setAttrib(n,'data-rokbox-size',width+$('#rokbox_width_unit').val()+' '+height+$('#rokbox_height_unit').val());}
+if(thubmnail){ed.dom.setAttrib(n,'data-rokbox-generate-thumbnail',1);}
+if(album){ed.dom.setAttrib(n,'data-rokbox-album',album);}
+if(element){ed.dom.setAttrib(n,'data-rokbox-element',element);}
+ed.dom.setAttrib(n,'data-rokbox',1);ed.dom.setAttrib(n,'target','_blank');},onSelect:function(){},onSelectFile:function(args){}});})();

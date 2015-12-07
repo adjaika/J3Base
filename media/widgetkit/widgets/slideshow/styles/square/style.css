@@ -1,0 +1,92 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/*
+ * Widgetkit Slideshow: square Style
+ */
+
+
+/* Navigation
+----------------------------------------------------------------------------------------------------*/
+
+.wk-slideshow-square .nav {
+	position: relative;
+	z-index: 2;
+	margin-top: -25px;
+	text-align: center;
+}
+
+.wk-slideshow-square .nav li {
+	display: inline-block;
+	margin-left: 5px;
+}
+
+.wk-slideshow-square .nav li:first-child { margin-left: 0; }
+
+.wk-slideshow-square .nav span {
+	width: 18px;
+	height: 18px;
+	background: url(images/nav.png) 0 0 no-repeat;
+	overflow: hidden;
+	-webkit-transition: all linear 0.07s;
+	transition: all linear 0.07s;
+	opacity: 0.5;
+}
+.wk-slideshow-square .nav span:hover { 
+	-webkit-transform: scale(0.9);
+	transform: scale(0.9); 
+	opacity: 1; 
+}
+
+.wk-slideshow-square .nav .active span { opacity: 1; }
+
+.wk-slideshow-square .nav span:active { 	
+	-webkit-transform: scale(0.8);
+	transform: scale(0.8);  
+}
+
+
+/* Buttons
+----------------------------------------------------------------------------------------------------*/
+
+.wk-slideshow-square > div { position: relative; }
+
+.wk-slideshow-square .next, 
+.wk-slideshow-square .prev {
+	top: 50%;
+	width: 44px;
+	height: 44px;
+	margin-top: -25px;
+	opacity: 0;
+}
+
+.wk-slideshow-square .next {
+	right: -10px;  
+	background: url(images/button_next.png) 0 0 no-repeat;
+}
+
+.wk-slideshow-square .prev { 
+	left: -10px; 
+	background: url(images/button_prev.png) 0 0 no-repeat;
+}
+
+.wk-slideshow-square > div:hover .next,
+.wk-slideshow-square > div:hover .prev {
+	-webkit-transition: all ease-out .3s;
+	transition: all ease-out .3s;
+	opacity: 1;
+}
+
+.wk-slideshow-square > div:hover .next { right: 15px; }
+.wk-slideshow-square > div:hover .prev { left: 15px; }
+
+
+/* Responsive
+----------------------------------------------------------------------------------------------------*/
+
+/* Only Touch Devices */
+@media (max-device-width: 1024px) {
+
+	.wk-slideshow-square .next,
+	.wk-slideshow-square .prev { display: none; }
+
+}

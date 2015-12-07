@@ -1,0 +1,107 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/*
+ * Widgetkit Slideshow: vida Style
+ */
+
+
+/* Navigation
+----------------------------------------------------------------------------------------------------*/
+
+.wk-slideshow-vida .nav {
+	position: absolute;
+	z-index: 4;
+	bottom: 3%;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+.wk-slideshow-vida .nav li {
+	display: inline-block;
+	margin-left: 8px;
+	padding: 3px;
+	background: rgba(0,0,0,0.1);
+	border-radius: 50%;
+	-webkit-transition: all linear 0.06s;
+	transition: all linear 0.06s;
+}
+
+.wk-slideshow-vida .nav li:first-child { margin-left: 0; }
+
+.wk-slideshow-vida .nav span {
+	width: 12px;
+	height: 12px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	-webkit-transition: all linear 0.06s;
+	transition: all linear 0.06s;
+}
+
+.wk-slideshow-vida .nav li:hover {
+	-webkit-transform: scale(1.15);
+	transform: scale(1.15);
+}
+
+.wk-slideshow-vida .nav li.active:hover {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.wk-slideshow-vida .nav span:active,
+.wk-slideshow-vida .nav .active span { background: #fff; }
+
+
+/* Buttons
+----------------------------------------------------------------------------------------------------*/
+
+.wk-slideshow-vida > div { position: relative; }
+
+.wk-slideshow-vida > div:hover .next,
+.wk-slideshow-vida > div:hover .prev {
+	top: 50%;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	background-color: rgba(0,0,0,0.1);
+	background-image: url(images/buttons.svg);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	border-radius: 4px;
+
+}
+
+.wk-slideshow-vida > div:hover .next { 
+	right: 20px;
+	background-position: 0 -100px;
+}
+
+.wk-slideshow-vida > div:hover .prev { left: 20px; }
+
+.wk-slideshow-vida > div .next:hover,
+.wk-slideshow-vida > div .prev:hover {
+	background-color: rgba(0,0,0,0.05);
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+	transition: all ease-in-out 0.18s;
+}
+
+.wk-slideshow-vida:hover > div .next:active,
+.wk-slideshow-vida:hover > div .prev:active {
+	background-color: rgba(0,0,0,0.15);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	transition: all ease-in-out 0.06s;
+}
+
+
+/* Responsive
+----------------------------------------------------------------------------------------------------*/
+
+/* Only Touch Devices */
+@media (max-device-width: 1024px) {
+
+	.wk-slideshow-vida .next,
+	.wk-slideshow-vida .prev { display: none; }
+
+}

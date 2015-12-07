@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content">
+	<name>plg_content_mx</name>
+	<author>Kulikov Sergey</author>
+	<creationDate>2013</creationDate>
+	<copyright>MX Studio</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@mxsite.ru</authorEmail>
+	<authorUrl>mxsite.ru</authorUrl>
+	<version>2.5.0</version>
+	<description>mx plugin</description>
+	<files>
+		<filename plugin="mx">mx.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages>
+	</languages>
+	<config>
+		
+	</config>
+</extension>

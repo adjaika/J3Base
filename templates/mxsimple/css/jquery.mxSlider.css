@@ -1,0 +1,14 @@
+.mxSlider {
+    position: relative;
+    overflow: hidden;
+}
+
+.mxSliderInner {
+    width: 100000px;
+    display: table;
+}
+
+.mxSliderItem {
+    float: left;
+    display: block;
+}

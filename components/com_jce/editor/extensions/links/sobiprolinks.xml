@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<install version="2.1" type="extension" extension="sobiprolinks" folder="links" method="upgrade" core="0">
+	<name>Sobipro Links for JCE Advanced Link</name>
+	<version>2.1</version>
+	<creationDate>22 June 2012</creationDate>
+	<author>Vox Interactif</author>
+	<authorEmail>dev@voxinteractif.com</authorEmail>
+	<authorUrl>www.voxinteractif.com</authorUrl>
+	<copyright>Copyright (C) 2012 Vox Interactif. All Rights Reserved.</copyright>
+	<license>GNU GPL v.3 or later</license>
+	<description>Sobipro for JCE 2.0</description>
+	<files>
+		<filename>sobiprolinks.php</filename>
+		<filename>sobiprolinks/index.html</filename>
+		<filename>sobiprolinks/sobipro.php</filename>
+	</files>
+	<params group="links">
+		<param name="sobiprolinks" type="list" default="1" label="WF_LABEL_EXTENSION_ENABLE" description="WF_LABEL_EXTENSION_ENABLE_DESC">
+        	<option value="1">WF_OPTION_YES</option>
+        	<option value="0">WF_OPTION_NO</option>
+    	</param>
+	</params>
+	<params group="sobiprolinks">
+		<param name="sobipro" type="list" default="1" label="Category links" description="Allows you to browse Sobipro categories and link to them or their items">
+        	<option value="1">WF_OPTION_YES</option>
+        	<option value="0">WF_OPTION_NO</option>
+    	</param>
+	</params>
+	<plugins></plugins>
+</install>
