@@ -7,7 +7,7 @@
 // view: через запятую область видимой части при установленном strict, например - center,center
 define('TMP_DIR',dirname(__FILE__).'/tmp');
 
-$compression=array('jpg'=>100,'png'=>9);
+$compression=array('jpg'=>100,'jpeg'=>100,'png'=>9);
 
 function hexToRGB($c) {
     $l = strlen($c);
@@ -34,7 +34,7 @@ $height=$_REQUEST['h'];
 $strict=(isset($_REQUEST['strict'])?true:false);
 $view=explode(',',(isset($_REQUEST['view'])?$_REQUEST['view']:'center,center'));
 $color=isset($_REQUEST['color'])?$_REQUEST['color']:'ffffff';
-$src=$_REQUEST['src'];
+$src=preg_replace('/^http(s)?:\/\/[^\/]+?\//','/',$_REQUEST['src']);
 if (isset($_REQUEST['mode'])) {$mode=$_REQUEST['mode'].'side';} else {$mode='inside';}
 if ((strlen($src)>0) && (substr($src,0,1)!='/')) {$src='/'.$src;}
 

@@ -81,6 +81,19 @@ function addLibrary($name,$options=null) {
             $doc->addStyleSheet($templatePath . '/lib/wow/css/libs/animate.css');
             $doc->addScript($templatePath . '/lib/wow/dist/wow.min.js');
             break;
+        case 'hover': // Hover.css - css-анимация при наведении http://ianlunn.co.uk/articles/hover-css-tutorial-introduction/
+            $doc->addStyleSheet($templatePath . '/lib/hover/css/hover-min.css');
+            break;
+        case 'sequence': // CSS animation framework (for creating sliders, presentations, banners, and other step-based applications) http://www.sequencejs.com/
+            $doc->addScript($templatePath . '/lib/sequence/scripts/imagesloaded.pkgd.min.js');
+            $doc->addScript($templatePath . '/lib/sequence/scripts/hammer.min.js');
+            $doc->addScript($templatePath . '/lib/sequence/scripts/sequence.min.js');
+            $doc->addScript($templatePath . '/lib/sequence/scripts/sequence-theme.basic.js');
+            break;
+        case 'lightbox2': // Lightbox 2 - http://lokeshdhakar.com/projects/lightbox2/
+            $doc->addStyleSheet($templatePath . '/lib/lightbox2/dist/css/lightbox.min.css');
+            $doc->addScript($templatePath . '/lib/lightbox2/dist/js/lightbox.min.js');
+            break;
     }
 }
 
