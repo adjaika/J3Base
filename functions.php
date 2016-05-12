@@ -94,6 +94,9 @@ function addLibrary($name,$options=null) {
             $doc->addStyleSheet($templatePath . '/lib/lightbox2/dist/css/lightbox.min.css');
             $doc->addScript($templatePath . '/lib/lightbox2/dist/js/lightbox.min.js');
             break;
+        case 'imagesLoaded': // imagesLoaded - https://github.com/desandro/imagesloaded
+            $doc->addScript($templatePath . '/lib/js/imagesloaded.pkgd.min.js');
+            break;
     }
 }
 

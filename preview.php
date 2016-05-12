@@ -1,10 +1,11 @@
 <?
-// src - url-путь к фото (обяз. параметр)
+// src - полный (c http://) или относительный url-путь к фото (обяз. параметр)
 // w - ширина, h - высота
 // mode: in - вписать, out - описать)
 // strict: для in расширить до заданных размеров, для out - обрезать до заданных размеров
 // color: для mode=in и strict - цвет заполнителя свободного места
 // view: через запятую область видимой части при установленном strict, например - center,center
+// cache: если параметр присутствует, то изображения будут кэшироваться в TMP_DIR
 define('TMP_DIR',dirname(__FILE__).'/tmp');
 
 $compression=array('jpg'=>100,'jpeg'=>100,'png'=>9);
@@ -44,7 +45,7 @@ if (! file_exists($src)) {exit;}
 
 $fn=md5(substr($preview_name,0,strrpos($preview_name, '.')).'_'.$width.'_'.$height.'_'.($strict?'1':'0').'_'.$view[0].$view[1].'_'.$color);
 $ext=substr($preview_name,strrpos($preview_name, '.')+1);
-if (file_exists(TMP_DIR.'/'.$fn.'.'.$ext)) {
+if (isset($_REQUEST['cache'])&&file_exists(TMP_DIR.'/'.$fn.'.'.$ext)) {
     $path=TMP_DIR.'/'.$fn.'.'.$ext;
     $path=str_replace('\\','/',$path);
     header('location: ' . str_replace($_SERVER['DOCUMENT_ROOT'],'',$path));
@@ -61,7 +62,7 @@ if (($strict) && ($width) & ($height)) {
         $res=$res->crop($view[0], $view[1], $width, $height);
     }
 }
-$res->saveToFile(TMP_DIR.'/'.$fn.'.'.$ext,$compression[strtolower($ext)]);
+if (isset($_REQUEST['cache'])) {$res->saveToFile(TMP_DIR.'/'.$fn.'.'.$ext,$compression[strtolower($ext)]);}
 $res->output(strtolower($ext),$compression[strtolower($ext)]);
 
 
