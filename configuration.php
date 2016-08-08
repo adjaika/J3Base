@@ -21,7 +21,7 @@ class JConfig {
 	public $secret = 'MZpUTZa2SB1weg6J';
 	public $gzip = '0';
 	public $error_reporting = 'default';
-	public $helpurl = 'http://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}';
+	public $helpurl = 'https://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}';
 	public $ftp_host = '';
 	public $ftp_port = '';
 	public $ftp_user = '';
@@ -56,7 +56,7 @@ class JConfig {
 	public $feed_limit = '10';
 	public $log_path = 'Z:\\home\\local.j3.ru\\www/logs';
 	public $tmp_path = 'Z:\\home\\local.j3.ru\\www/tmp';
-	public $lifetime = '15000';
+	public $lifetime = '60';
 	public $session_handler = 'database';
 	public $memcache_persist = '1';
 	public $memcache_compress = '0';
@@ -72,7 +72,7 @@ class JConfig {
 	public $proxy_user = '';
 	public $proxy_pass = '';
 	public $MetaRights = '';
-	public $sitename_pagetitles = '0';
+	public $sitename_pagetitles = '1';
 	public $force_ssl = '0';
 	public $session_memcache_server_host = 'localhost';
 	public $session_memcache_server_port = '11211';
@@ -83,4 +83,10 @@ class JConfig {
 	public $cookie_domain = '';
 	public $cookie_path = '';
 	public $asset_id = '1';
+	public $redis_persist = '1';
+	public $redis_server_host = 'localhost';
+	public $redis_server_port = '6379';
+	public $redis_server_auth = '';
+	public $redis_server_db = '0';
+	public $massmailoff = '0';
 }

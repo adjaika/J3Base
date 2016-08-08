@@ -17,8 +17,13 @@ class plgSystemmxsys extends JPlugin
     }
 
     public function onAfterRender() {
-        /*$body=JFactory::getApplication()->getBody();
-        JFactory::getApplication()->setBody($body);*/
+        $body=JFactory::getApplication()->getBody();
+        JFactory::getApplication()->setBody($body);
+
+        // Make title for article multiline textarea
+        if ($this->app->isAdmin() && $_REQUEST['option']=='com_content' && $_REQUEST['view']=='article' && isset($_REQUEST['id'])) {
+            $body = preg_replace('|<input type="text" name="(jform\[title\])" id="(jform_title)" value="(.*?)"(.*?)>|s', '<textarea name="$1" id="$2"$4 rows=1>$3</textarea>', $body);
+        }
     }
 
     public function onAfterRoute() {

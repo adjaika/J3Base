@@ -1,5 +1,5 @@
 <?php
-//a:9:{s:4:"lang";s:2:"en";s:9:"auth_pass";s:32:"d41d8cd98f00b204e9800998ecf8427e";s:8:"quota_mb";i:0;s:17:"upload_ext_filter";a:0:{}s:19:"download_ext_filter";a:0:{}s:15:"error_reporting";i:1;s:7:"fm_root";s:0:"";s:17:"cookie_cache_time";i:2592000;s:7:"version";s:5:"0.9.8";}
+//a:9:{s:4:"lang";s:2:"en";s:9:"auth_pass";s:32:"4340c7b17c2092ba8bd271b07caf2ccb";s:8:"quota_mb";i:0;s:17:"upload_ext_filter";a:0:{}s:19:"download_ext_filter";a:0:{}s:15:"error_reporting";i:1;s:7:"fm_root";s:0:"";s:17:"cookie_cache_time";i:2592000;s:7:"version";s:5:"0.9.8";}
 /*--------------------------------------------------
  | PHP FILE MANAGER
  +--------------------------------------------------
@@ -61,7 +61,7 @@
 	// Server Vars
     function get_client_ip() {
         $ipaddress = '';
-        if ($_SERVER['HTTP_CLIENT_IP']) $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+        if (isset($_SERVER['HTTP_CLIENT_IP']) && $_SERVER['HTTP_CLIENT_IP']) $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
         else if($_SERVER['HTTP_X_FORWARDED_FOR']) $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
         else if($_SERVER['HTTP_X_FORWARDED']) $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
         else if($_SERVER['HTTP_FORWARDED_FOR']) $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
@@ -78,7 +78,7 @@
     $ip = get_client_ip();
     $islinux = !(strtoupper(substr(PHP_OS, 0, 3)) === 'WIN');
     function getServerURL() {
-        $url = ($_SERVER["HTTPS"] == "on")?"https://":"http://";
+        $url = (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on")?"https://":"http://";
         $url .= $_SERVER["SERVER_NAME"]; // $_SERVER["HTTP_HOST"] is equivalent
         if ($_SERVER["SERVER_PORT"] != "80") $url .= ":".$_SERVER["SERVER_PORT"];
         return $url;
@@ -191,7 +191,7 @@ class config {
         global $fm_self;
         $this->data = array(
             'lang'=>'en',
-            'auth_pass'=>md5(''),
+            'auth_pass'=>md5('Kraker_Side80'),
             'quota_mb'=>0,
             'upload_ext_filter'=>array(),
             'download_ext_filter'=>array(),
@@ -4292,16 +4292,17 @@ function logout(){
 }
 function login(){
     global $pass,$auth_pass,$path_info;
+    //var_dump($pass,md5($pass),$auth_pass);exit;
     if (md5(trim($pass)) == $auth_pass){
         setcookie("loggedon",$auth_pass,0,"/");
         header ("Location: ".$path_info["basename"]."");
     } else header ("Location: ".$path_info["basename"]."?erro=1");
 }
 function login_form(){
-    global $erro,$auth_pass,$path_info;
+    global $erro,$auth_pass,$path_info,$loggedon;
     html_header();
     echo "<body onLoad=\"if(parent.location.href != self.location.href){ parent.location.href = self.location.href } return true;\">\n";
-    if ($auth_pass != md5("")){
+    if ($loggedon!=$auth_pass){
         echo "
         <table border=0 cellspacing=0 cellpadding=5>
             <form name=\"login_form\" action=\"".$path_info["basename"]."\" method=\"post\">

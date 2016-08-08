@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 07 2015 г., 15:08
+-- Время создания: Июн 15 2016 г., 02:04
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -40,14 +40,14 @@ CREATE TABLE IF NOT EXISTS `j3_assets` (
   UNIQUE KEY `idx_asset_name` (`name`),
   KEY `idx_lft_rgt` (`lft`,`rgt`),
   KEY `idx_parent_id` (`parent_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=64 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=66 ;
 
 --
 -- Дамп данных таблицы `j3_assets`
 --
 
 INSERT INTO `j3_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 0, 111, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(1, 0, 0, 113, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (4, 1, 7, 8, 1, 'com_cache', 'com_cache', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
@@ -64,27 +64,27 @@ INSERT INTO `j3_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `titl
 (15, 1, 33, 34, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
 (16, 1, 35, 36, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (17, 1, 37, 38, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
-(18, 1, 39, 70, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(19, 1, 71, 74, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(20, 1, 75, 76, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
-(21, 1, 77, 78, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
-(22, 1, 79, 80, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(23, 1, 81, 82, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(24, 1, 83, 86, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(25, 1, 87, 90, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
-(26, 1, 91, 92, 1, 'com_wrapper', 'com_wrapper', '{}'),
+(18, 1, 39, 72, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(19, 1, 73, 76, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(20, 1, 77, 78, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
+(21, 1, 79, 80, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
+(22, 1, 81, 82, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(23, 1, 83, 84, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(24, 1, 85, 88, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(25, 1, 89, 92, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
+(26, 1, 93, 94, 1, 'com_wrapper', 'com_wrapper', '{}'),
 (27, 8, 18, 19, 2, 'com_content.category.2', 'Без категории', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
 (28, 3, 4, 5, 2, 'com_banners.category.3', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (29, 7, 14, 15, 2, 'com_contact.category.4', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(30, 19, 72, 73, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(31, 25, 88, 89, 2, 'com_weblinks.category.6', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(32, 24, 84, 85, 1, 'com_users.category.7', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(33, 1, 93, 94, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(34, 1, 95, 96, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
-(35, 1, 97, 98, 1, 'com_tags', 'com_tags', '{"core.admin":[],"core.manage":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
-(36, 1, 99, 100, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
-(37, 1, 101, 102, 1, 'com_ajax', 'com_ajax', '{}'),
-(38, 1, 103, 104, 1, 'com_postinstall', 'com_postinstall', '{}'),
+(30, 19, 74, 75, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(31, 25, 90, 91, 2, 'com_weblinks.category.6', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(32, 24, 86, 87, 1, 'com_users.category.7', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(33, 1, 95, 96, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(34, 1, 97, 98, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
+(35, 1, 99, 100, 1, 'com_tags', 'com_tags', '{"core.admin":[],"core.manage":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
+(36, 1, 101, 102, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
+(37, 1, 103, 104, 1, 'com_ajax', 'com_ajax', '{}'),
+(38, 1, 105, 106, 1, 'com_postinstall', 'com_postinstall', '{}'),
 (39, 18, 40, 41, 2, 'com_modules.module.1', 'Главное меню', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (40, 18, 42, 43, 2, 'com_modules.module.2', 'Login', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (41, 18, 44, 45, 2, 'com_modules.module.3', 'Popular Articles', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
@@ -99,9 +99,10 @@ INSERT INTO `j3_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `titl
 (52, 18, 62, 63, 2, 'com_modules.module.79', 'Multilanguage status', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (53, 18, 64, 65, 2, 'com_modules.module.86', 'Joomla Version', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (57, 18, 68, 69, 2, 'com_modules.module.88', 'Widgetkit Twitter', ''),
-(61, 1, 105, 106, 1, 'com_widgetkit', 'widgetkit', '{}'),
 (62, 1, 107, 108, 1, 'com_jce', 'jce', '{}'),
-(63, 1, 109, 110, 1, 'com_fieldsattach', 'fieldsattach', '{}');
+(63, 1, 109, 110, 1, 'com_fieldsattach', 'fieldsattach', '{}'),
+(64, 1, 111, 112, 1, 'com_widgetkit', 'com_widgetkit', '{}'),
+(65, 18, 70, 71, 2, 'com_modules.module.87', 'Widgetkit', '{}');
 
 -- --------------------------------------------------------
 
@@ -514,7 +515,7 @@ CREATE TABLE IF NOT EXISTS `j3_extensions` (
   KEY `element_clientid` (`element`,`client_id`),
   KEY `element_folder_clientid` (`element`,`folder`,`client_id`),
   KEY `extension` (`type`,`element`,`folder`,`client_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10044 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10052 ;
 
 --
 -- Дамп данных таблицы `j3_extensions`
@@ -554,7 +555,7 @@ INSERT INTO `j3_extensions` (`extension_id`, `name`, `type`, `element`, `folder`
 (32, 'com_postinstall', 'component', 'com_postinstall', '', 1, 1, 1, 1, '{"name":"com_postinstall","type":"component","creationDate":"September 2013","author":"Joomla! Project","copyright":"(C) 2005 - 2015 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.2.0","description":"COM_POSTINSTALL_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (101, 'SimplePie', 'library', 'simplepie', '', 0, 1, 1, 1, '{"name":"SimplePie","type":"library","creationDate":"2004","author":"SimplePie","copyright":"Copyright (c) 2004-2009, Ryan Parman and Geoffrey Sneddon","authorEmail":"","authorUrl":"http:\\/\\/simplepie.org\\/","version":"1.2","description":"LIB_SIMPLEPIE_XML_DESCRIPTION","group":"","filename":"simplepie"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (102, 'phputf8', 'library', 'phputf8', '', 0, 1, 1, 1, '{"name":"phputf8","type":"library","creationDate":"2006","author":"Harry Fuecks","copyright":"Copyright various authors","authorEmail":"hfuecks@gmail.com","authorUrl":"http:\\/\\/sourceforge.net\\/projects\\/phputf8","version":"0.5","description":"LIB_PHPUTF8_XML_DESCRIPTION","group":"","filename":"phputf8"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(103, 'Joomla! Platform', 'library', 'joomla', '', 0, 1, 1, 1, '{"name":"Joomla! Platform","type":"library","creationDate":"2008","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2015 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"http:\\/\\/www.joomla.org","version":"13.1","description":"LIB_JOOMLA_XML_DESCRIPTION","group":"","filename":"joomla"}', '{"mediaversion":"d818ad97b5852464967ac5cb71e290fc"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(103, 'Joomla! Platform', 'library', 'joomla', '', 0, 1, 1, 1, '{"name":"Joomla! Platform","type":"library","creationDate":"2008","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2015 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"http:\\/\\/www.joomla.org","version":"13.1","description":"LIB_JOOMLA_XML_DESCRIPTION","group":"","filename":"joomla"}', '{"mediaversion":"3dfa11e4b9467c6a3eb2a687491c2956"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (104, 'IDNA Convert', 'library', 'idna_convert', '', 0, 1, 1, 1, '{"name":"IDNA Convert","type":"library","creationDate":"2004","author":"phlyLabs","copyright":"2004-2011 phlyLabs Berlin, http:\\/\\/phlylabs.de","authorEmail":"phlymail@phlylabs.de","authorUrl":"http:\\/\\/phlylabs.de","version":"0.8.0","description":"LIB_IDNA_XML_DESCRIPTION","group":"","filename":"idna_convert"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (105, 'FOF', 'library', 'fof', '', 0, 1, 1, 1, '{"name":"FOF","type":"library","creationDate":"2015-04-22 13:15:32","author":"Nicholas K. Dionysopoulos \\/ Akeeba Ltd","copyright":"(C)2011-2015 Nicholas K. Dionysopoulos","authorEmail":"nicholas@akeebabackup.com","authorUrl":"https:\\/\\/www.akeebabackup.com","version":"2.4.3","description":"LIB_FOF_XML_DESCRIPTION","group":"","filename":"fof"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (106, 'PHPass', 'library', 'phpass', '', 0, 1, 1, 1, '{"name":"PHPass","type":"library","creationDate":"2004-2006","author":"Solar Designer","copyright":"","authorEmail":"solar@openwall.com","authorUrl":"http:\\/\\/www.openwall.com\\/phpass\\/","version":"0.3","description":"LIB_PHPASS_XML_DESCRIPTION","group":"","filename":"phpass"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
@@ -666,13 +667,6 @@ INSERT INTO `j3_extensions` (`extension_id`, `name`, `type`, `element`, `folder`
 (10008, 'MXSimple', 'template', 'mxsimple', '', 0, 1, 1, 0, '{"name":"MXSimple","type":"template","creationDate":"4\\/30\\/2012","author":"Kulikov Sergey","copyright":"Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.","authorEmail":"info@mxsite.ru","authorUrl":"","version":"1.0","description":"MXSimple","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10016, 'plg_content_mx', 'plugin', 'mx', 'content', 0, 1, 1, 0, '{"name":"plg_content_mx","type":"plugin","creationDate":"2013","author":"Kulikov Sergey","copyright":"MX Studio","authorEmail":"info@mxsite.ru","authorUrl":"mxsite.ru","version":"2.5.0","description":"mx plugin","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10017, 'plg_system_mx', 'plugin', 'mxsys', 'system', 0, 1, 1, 0, '{"name":"plg_system_mx","type":"plugin","creationDate":"2013","author":"Kulikov Sergey","copyright":"MX Studio","authorEmail":"info@mxsite.ru","authorUrl":"mxsite.ru","version":"1.0.0","description":"mx system plugin","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10018, 'Widgetkit', 'module', 'mod_widgetkit', '', 0, 1, 0, 0, '{"name":"Widgetkit","type":"module","creationDate":"May 2011","author":"YOOtheme","copyright":"Copyright (C) 2007 - 2011 YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/www.yootheme.com","version":"1.0.0","description":"Widgetkit module for Widgetkit developed by YOOtheme (http:\\/\\/www.yootheme.com)","group":""}', '{"widget_id":"","moduleclass_sfx":""}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10019, 'Widgetkit Twitter', 'module', 'mod_widgetkit_twitter', '', 0, 1, 0, 0, '{"name":"Widgetkit Twitter","type":"module","creationDate":"May 2011","author":"YOOtheme","copyright":"Copyright (C) 2007 - 2011 YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/www.yootheme.com","version":"1.0.0","description":"Twitter module for Widgetkit developed by YOOtheme (http:\\/\\/www.yootheme.com)","group":""}', '{"style_":"list","from_user":"","to_user":"","ref_user":"","hashtag":"","word":"","nots":"","limit":"5","image_size":"48","show_image":"1","show_author":"1","show_date":"1","consumer_key":"","consumer_secret":"","access_token":"","access_token_secret":"","moduleclass_sfx":""}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10020, 'System - Widgetkit', 'plugin', 'widgetkit_system', 'system', 0, 1, 1, 0, '{"name":"System - Widgetkit","type":"plugin","creationDate":"May 2011","author":"YOOtheme","copyright":"Copyright (C) 2007 - 2011 YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/www.yootheme.com","version":"1.0.0","description":"Plugin for Widgetkit developed by YOOtheme (http:\\/\\/www.yootheme.com)","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10021, 'Content - Widgetkit', 'plugin', 'widgetkit_content', 'content', 0, 1, 1, 0, '{"name":"Content - Widgetkit","type":"plugin","creationDate":"May 2011","author":"YOOtheme","copyright":"Copyright (C) 2007 - 2011 YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/www.yootheme.com","version":"1.0.0","description":"Plugin for Widgetkit developed by YOOtheme (http:\\/\\/www.yootheme.com)","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10022, 'System - Widgetkit ZOO', 'plugin', 'widgetkit_zoo', 'system', 0, 1, 1, 0, '{"name":"System - Widgetkit ZOO","type":"plugin","creationDate":"August 2013","author":"YOOtheme","copyright":"Copyright (C) 2007 - 2013 YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/www.yootheme.com","version":"3.1.0","description":"ZOO plugin for Widgetkit developed by YOOtheme (http:\\/\\/www.yootheme.com)","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10023, 'System - Widgetkit Joomla', 'plugin', 'widgetkit_joomla', 'system', 0, 1, 1, 0, '{"name":"System - Widgetkit Joomla","type":"plugin","creationDate":"December 2011","author":"YOOtheme","copyright":"Copyright (C) 2007 - 2011 YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/www.yootheme.com","version":"1.0.0","description":"Joomla Content plugin for Widgetkit developed by YOOtheme (http:\\/\\/www.yootheme.com)","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10024, 'widgetkit', 'component', 'com_widgetkit', '', 1, 1, 0, 0, '{"name":"Widgetkit","type":"component","creationDate":"July 2014","author":"YOOtheme","copyright":"Copyright (C) YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/www.yootheme.com","version":"1.5.1","description":"Widgetkit - A widget toolkit by YOOtheme (http:\\/\\/www.yootheme.com)","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10028, 'plg_editors_jce', 'plugin', 'jce', 'editors', 0, 1, 1, 0, '{"name":"plg_editors_jce","type":"plugin","creationDate":"12 December 2013","author":"Ryan Demmer","copyright":"2006-2010 Ryan Demmer","authorEmail":"info@joomlacontenteditor.net","authorUrl":"http:\\/\\/www.joomlacontenteditor.net","version":"2.3.4.4","description":"WF_EDITOR_PLUGIN_DESC","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10029, 'plg_quickicon_jcefilebrowser', 'plugin', 'jcefilebrowser', 'quickicon', 0, 1, 1, 0, '{"name":"plg_quickicon_jcefilebrowser","type":"plugin","creationDate":"12 December 2013","author":"Ryan Demmer","copyright":"Copyright (C) 2006 - 2013 Ryan Demmer. All rights reserved","authorEmail":"@@email@@","authorUrl":"www.joomalcontenteditor.net","version":"2.3.4.4","description":"PLG_QUICKICON_JCEFILEBROWSER_XML_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10030, 'jce', 'component', 'com_jce', '', 1, 1, 0, 0, '{"name":"JCE","type":"component","creationDate":"12 December 2013","author":"Ryan Demmer","copyright":"Copyright (C) 2006 - 2013 Ryan Demmer. All rights reserved","authorEmail":"info@joomlacontenteditor.net","authorUrl":"www.joomlacontenteditor.net","version":"2.3.4.4","description":"WF_ADMIN_DESC","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
@@ -688,7 +682,15 @@ INSERT INTO `j3_extensions` (`extension_id`, `name`, `type`, `element`, `folder`
 (10040, 'Search - Fieldsattachment Advanced search', 'plugin', 'fieldsattachmentadvanced', 'search', 0, 1, 1, 0, '{"name":"Search - Fieldsattachment Advanced search","type":"plugin","creationDate":"08-02-2012","author":"Cristian Gra\\u00f1\\u00f3 Reder","copyright":"Copyright (C) 2005 - 2011 Open Source Matters. All rights reserved.","authorEmail":"cristiangrano@hotmail.com\\t","authorUrl":"www.percha.com","version":"0.3","description":"Seach on the extra fields","group":"","filename":"fieldsattachmentadvanced"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10041, 'AdvancedSearch - Fieldsattachment', 'plugin', 'fieldsattachment', 'advancedsearch', 0, 1, 1, 0, '{"name":"AdvancedSearch - Fieldsattachment","type":"plugin","creationDate":"11-12-2011","author":"Cristian Gra\\u00f1\\u00f3 Reder","copyright":"Copyright (C) 2005 - 2011 Open Source Matters. All rights reserved.","authorEmail":"cristiangrano@hotmail.com\\t","authorUrl":"www.percha.com","version":"1.0","description":"Seach on the extra fields","group":"","filename":"fieldsattachment"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10042, 'Fieldsattach - fieldsattachements checkbox', 'plugin', 'checkbox', 'fieldsattachment', 0, 1, 1, 0, '{"name":"Fieldsattach - fieldsattachements checkbox","type":"plugin","creationDate":"04-12-2011","author":"Cristian Gra\\u00f1\\u00f3 Reder","copyright":"Copyright (C) 2005 - 2011 Open Source Cristian Gra\\u00f1\\u00f3. All rights reserved.","authorEmail":"cristiangrano@hotmail.com\\t","authorUrl":"www.percha.com","version":"1.5","description":"Checkbox Field","group":"","filename":"checkbox"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10043, 'MX Simple Module', 'module', 'mod_mxsimple', '', 0, 1, 1, 0, '{"name":"MX Simple Module","type":"module","creationDate":"11.05.2014","author":"Kulikov S.V.","copyright":"Copyright (C) 2014 All rights reserved.","authorEmail":"info@mxsite.ru","authorUrl":"mxsite.ru","version":"1.0.0","description":"MXSimple module","group":"","filename":"mod_mxsimple"}', '{"modType":"default"}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
+(10043, 'MX Simple Module', 'module', 'mod_mxsimple', '', 0, 1, 1, 0, '{"name":"MX Simple Module","type":"module","creationDate":"11.05.2014","author":"Kulikov S.V.","copyright":"Copyright (C) 2014 All rights reserved.","authorEmail":"info@mxsite.ru","authorUrl":"mxsite.ru","version":"1.0.0","description":"MXSimple module","group":"","filename":"mod_mxsimple"}', '{"modType":"default"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10044, 'com_widgetkit', 'component', 'com_widgetkit', '', 1, 1, 0, 0, '{"name":"com_widgetkit","type":"component","creationDate":"June 2015","author":"YOOtheme","copyright":"Copyright (C) YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/yootheme.com","version":"2.4.0","description":"A widget toolkit by YOOtheme.","group":"","filename":"widgetkit"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10045, 'Widgetkit', 'module', 'mod_widgetkit', '', 0, 1, 0, 0, '{"name":"Widgetkit","type":"module","creationDate":"June 2015","author":"YOOtheme","copyright":"Copyright (C) YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/yootheme.com","version":"2.4.0","description":"A widget toolkit by YOOtheme.","group":"","filename":"mod_widgetkit"}', '{"widgetkit":""}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10046, 'Content - Widgetkit', 'plugin', 'widgetkit', 'content', 0, 1, 1, 0, '{"name":"Content - Widgetkit","type":"plugin","creationDate":"June 2015","author":"YOOtheme","copyright":"Copyright (C) YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/yootheme.com","version":"2.4.0","description":"A widget toolkit by YOOtheme.","group":"","filename":"widgetkit"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10047, 'Editors-XTD - Widgetkit', 'plugin', 'widgetkit', 'editors-xtd', 0, 1, 1, 0, '{"name":"Editors-XTD - Widgetkit","type":"plugin","creationDate":"June 2015","author":"YOOtheme","copyright":"Copyright (C) YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/yootheme.com","version":"2.4.0","description":"A widget toolkit by YOOtheme.","group":"","filename":"widgetkit"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10048, 'System - Widgetkit ZOO', 'plugin', 'widgetkit_zoo', 'system', 0, 0, 1, 0, '{"name":"System - Widgetkit ZOO","type":"plugin","creationDate":"June 2015","author":"YOOtheme","copyright":"Copyright (C) YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/yootheme.com","version":"2.4.0","description":"A widget toolkit by YOOtheme.","group":"","filename":"widgetkit_zoo"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10049, 'System - Widgetkit K2', 'plugin', 'widgetkit_k2', 'system', 0, 0, 1, 0, '{"name":"System - Widgetkit K2","type":"plugin","creationDate":"June 2015","author":"YOOtheme","copyright":"Copyright (C) YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/yootheme.com","version":"2.4.0","description":"A widget toolkit by YOOtheme.","group":"","filename":"widgetkit_k2"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10050, 'Installer - YOOtheme', 'plugin', 'yootheme', 'installer', 0, 1, 1, 0, '{"name":"Installer - YOOtheme","type":"plugin","creationDate":"December 2014","author":"YOOtheme","copyright":"Copyright (C) YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/yootheme.com","version":"1.0.0","description":"PLG_INSTALLER_YOOTHEME_DESCRIPTION","group":"","filename":"yootheme"}', '[]', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10051, 'Widgetkit', 'package', 'pkg_widgetkit', '', 0, 1, 1, 0, '{"name":"Widgetkit","type":"package","creationDate":"June 2015","author":"YOOtheme","copyright":"Copyright (C) YOOtheme GmbH","authorEmail":"info@yootheme.com","authorUrl":"http:\\/\\/yootheme.com","version":"2.4.0","description":"A widget toolkit by YOOtheme.","group":"","filename":"pkg_widgetkit"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1446,14 +1448,14 @@ CREATE TABLE IF NOT EXISTS `j3_menu` (
   KEY `idx_alias` (`alias`),
   KEY `idx_path` (`path`(255)),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=121 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=122 ;
 
 --
 -- Дамп данных таблицы `j3_menu`
 --
 
 INSERT INTO `j3_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
-(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 73, 0, '*', 0),
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 63, 0, '*', 0),
 (2, 'menu', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 0, 1, 1, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 1, 10, 0, '*', 1),
 (3, 'menu', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 0, 2, 2, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 2, 3, 0, '*', 1),
 (4, 'menu', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 0, 2, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 4, 5, 0, '*', 1),
@@ -1478,17 +1480,17 @@ INSERT INTO `j3_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link
 (23, 'main', 'com_tags', 'Tags', '', 'Tags', 'index.php?option=com_tags', 'component', 0, 1, 1, 29, 0, '0000-00-00 00:00:00', 0, 1, 'class:tags', 0, '', 43, 44, 0, '', 1),
 (24, 'main', 'com_postinstall', 'Post-installation messages', '', 'Post-installation messages', 'index.php?option=com_postinstall', 'component', 0, 1, 1, 32, 0, '0000-00-00 00:00:00', 0, 1, 'class:postinstall', 0, '', 45, 46, 0, '*', 1),
 (101, 'mainmenu', 'Главная', 'glavnaya', '', 'glavnaya', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"featured_categories":[""],"layout_type":"blog","num_leading_articles":"1","num_intro_articles":"3","num_columns":"3","num_links":"0","multi_column_order":"1","orderby_pri":"","orderby_sec":"front","order_date":"","show_pagination":"2","show_pagination_results":"1","show_title":"","link_titles":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"1","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":1,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 47, 48, 1, '*', 0),
-(109, 'main', 'COM_WIDGETKIT', 'com-widgetkit', '', 'com-widgetkit', 'index.php?option=com_widgetkit', 'component', 0, 1, 1, 10024, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_widgetkit/images/widgetkit_16.png', 0, '', 49, 50, 0, '', 1),
-(111, 'main', 'WF_MENU_CPANEL', 'wf-menu-cpanel', '', 'jce/wf-menu-cpanel', 'index.php?option=com_jce', 'component', 0, 110, 2, 0, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-cpanel.png', 0, '', 52, 53, 0, '', 1),
-(112, 'main', 'WF_MENU_CONFIG', 'wf-menu-config', '', 'jce/wf-menu-config', 'index.php?option=com_jce&view=config', 'component', 0, 110, 2, 0, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-config.png', 0, '', 54, 55, 0, '', 1),
-(113, 'main', 'WF_MENU_PROFILES', 'wf-menu-profiles', '', 'jce/wf-menu-profiles', 'index.php?option=com_jce&view=profiles', 'component', 0, 110, 2, 0, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-profiles.png', 0, '', 56, 57, 0, '', 1),
-(114, 'main', 'WF_MENU_INSTALL', 'wf-menu-install', '', 'jce/wf-menu-install', 'index.php?option=com_jce&view=installer', 'component', 0, 110, 2, 0, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-install.png', 0, '', 58, 59, 0, '', 1),
-(115, 'main', 'JCE', 'jce', '', 'jce', 'index.php?option=com_jce', 'component', 0, 1, 1, 10030, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/logo.png', 0, '', 61, 70, 0, '', 1),
-(116, 'main', 'WF_MENU_CPANEL', 'wf-menu-cpanel', '', 'jce/wf-menu-cpanel', 'index.php?option=com_jce', 'component', 0, 115, 2, 10030, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-cpanel.png', 0, '', 62, 63, 0, '', 1),
-(117, 'main', 'WF_MENU_CONFIG', 'wf-menu-config', '', 'jce/wf-menu-config', 'index.php?option=com_jce&view=config', 'component', 0, 115, 2, 10030, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-config.png', 0, '', 64, 65, 0, '', 1),
-(118, 'main', 'WF_MENU_PROFILES', 'wf-menu-profiles', '', 'jce/wf-menu-profiles', 'index.php?option=com_jce&view=profiles', 'component', 0, 115, 2, 10030, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-profiles.png', 0, '', 66, 67, 0, '', 1),
-(119, 'main', 'WF_MENU_INSTALL', 'wf-menu-install', '', 'jce/wf-menu-install', 'index.php?option=com_jce&view=installer', 'component', 0, 115, 2, 10030, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-install.png', 0, '', 68, 69, 0, '', 1),
-(120, 'main', 'COM_FIELSATTACH_MENU', 'com-fielsattach-menu', '', 'com-fielsattach-menu', 'index.php?option=com_fieldsattach', 'component', 0, 1, 1, 10031, 0, '0000-00-00 00:00:00', 0, 1, '../media/com_fieldsattach/images/logo-16x16.png', 0, '{}', 71, 72, 0, '', 1);
+(111, 'main', 'WF_MENU_CPANEL', 'wf-menu-cpanel', '', 'jce/wf-menu-cpanel', 'index.php?option=com_jce', 'component', 0, 110, 2, 0, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-cpanel.png', 0, '', 50, 51, 0, '', 1),
+(112, 'main', 'WF_MENU_CONFIG', 'wf-menu-config', '', 'jce/wf-menu-config', 'index.php?option=com_jce&view=config', 'component', 0, 110, 2, 0, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-config.png', 0, '', 52, 53, 0, '', 1),
+(113, 'main', 'WF_MENU_PROFILES', 'wf-menu-profiles', '', 'jce/wf-menu-profiles', 'index.php?option=com_jce&view=profiles', 'component', 0, 110, 2, 0, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-profiles.png', 0, '', 54, 55, 0, '', 1),
+(114, 'main', 'WF_MENU_INSTALL', 'wf-menu-install', '', 'jce/wf-menu-install', 'index.php?option=com_jce&view=installer', 'component', 0, 110, 2, 0, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-install.png', 0, '', 56, 57, 0, '', 1),
+(115, 'main', 'JCE', 'jce', '', 'jce', 'index.php?option=com_jce', 'component', 0, 1, 1, 10030, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/logo.png', 0, '', 49, 58, 0, '', 1),
+(116, 'main', 'WF_MENU_CPANEL', 'wf-menu-cpanel', '', 'jce/wf-menu-cpanel', 'index.php?option=com_jce', 'component', 0, 115, 2, 10030, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-cpanel.png', 0, '', 50, 51, 0, '', 1),
+(117, 'main', 'WF_MENU_CONFIG', 'wf-menu-config', '', 'jce/wf-menu-config', 'index.php?option=com_jce&view=config', 'component', 0, 115, 2, 10030, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-config.png', 0, '', 52, 53, 0, '', 1),
+(118, 'main', 'WF_MENU_PROFILES', 'wf-menu-profiles', '', 'jce/wf-menu-profiles', 'index.php?option=com_jce&view=profiles', 'component', 0, 115, 2, 10030, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-profiles.png', 0, '', 54, 55, 0, '', 1),
+(119, 'main', 'WF_MENU_INSTALL', 'wf-menu-install', '', 'jce/wf-menu-install', 'index.php?option=com_jce&view=installer', 'component', 0, 115, 2, 10030, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jce/media/img/menu/jce-install.png', 0, '', 56, 57, 0, '', 1),
+(120, 'main', 'COM_FIELSATTACH_MENU', 'com-fielsattach-menu', '', 'com-fielsattach-menu', 'index.php?option=com_fieldsattach', 'component', 0, 1, 1, 10031, 0, '0000-00-00 00:00:00', 0, 1, '../media/com_fieldsattach/images/logo-16x16.png', 0, '{}', 59, 60, 0, '', 1),
+(121, 'main', 'COM_WIDGETKIT', 'com-widgetkit', '', 'com-widgetkit', 'index.php?option=com_widgetkit', 'component', 0, 1, 1, 10044, 0, '0000-00-00 00:00:00', 0, 1, 'class:widgetkit', 0, '{}', 61, 62, 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -1578,7 +1580,7 @@ CREATE TABLE IF NOT EXISTS `j3_modules` (
   KEY `published` (`published`,`access`),
   KEY `newsfeeds` (`module`,`published`),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=87 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=88 ;
 
 --
 -- Дамп данных таблицы `j3_modules`
@@ -1597,7 +1599,8 @@ INSERT INTO `j3_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orderin
 (14, 64, 'User Status', '', '', 2, 'status', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_status', 3, 1, '', 1, '*'),
 (15, 65, 'Title', '', '', 1, 'title', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_title', 3, 1, '', 1, '*'),
 (79, 68, 'Multilanguage status', '', '', 1, 'status', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_multilangstatus', 3, 1, '{"layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
-(86, 69, 'Joomla Version', '', '', 1, 'footer', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_version', 3, 1, '{"format":"short","product":"1","layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*');
+(86, 69, 'Joomla Version', '', '', 1, 'footer', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_version', 3, 1, '{"format":"short","product":"1","layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
+(87, 65, 'Widgetkit', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_widgetkit', 1, 1, '', 0, '*');
 
 -- --------------------------------------------------------
 
@@ -1730,8 +1733,8 @@ INSERT INTO `j3_postinstall_messages` (`postinstall_message_id`, `extension_id`,
 (2, 700, 'COM_CPANEL_MSG_EACCELERATOR_TITLE', 'COM_CPANEL_MSG_EACCELERATOR_BODY', 'COM_CPANEL_MSG_EACCELERATOR_BUTTON', 'com_cpanel', 1, 'action', 'admin://components/com_admin/postinstall/eaccelerator.php', 'admin_postinstall_eaccelerator_action', 'admin://components/com_admin/postinstall/eaccelerator.php', 'admin_postinstall_eaccelerator_condition', '3.2.0', 1),
 (3, 700, 'COM_CPANEL_WELCOME_BEGINNERS_TITLE', 'COM_CPANEL_WELCOME_BEGINNERS_MESSAGE', '', 'com_cpanel', 1, 'message', '', '', '', '', '3.2.0', 0),
 (4, 700, 'COM_CPANEL_MSG_PHPVERSION_TITLE', 'COM_CPANEL_MSG_PHPVERSION_BODY', '', 'com_cpanel', 1, 'message', '', '', 'admin://components/com_admin/postinstall/phpversion.php', 'admin_postinstall_phpversion_condition', '3.2.2', 1),
-(5, 700, 'COM_CPANEL_MSG_HTACCESS_TITLE', 'COM_CPANEL_MSG_HTACCESS_BODY', '', 'com_cpanel', 1, 'message', '', '', 'admin://components/com_admin/postinstall/htaccess.php', 'admin_postinstall_htaccess_condition', '3.4.0', 1),
-(6, 700, 'COM_CPANEL_MSG_ROBOTS_TITLE', 'COM_CPANEL_MSG_ROBOTS_BODY', '', 'com_cpanel', 1, 'message', '', '', '', '', '3.3.0', 1),
+(5, 700, 'COM_CPANEL_MSG_HTACCESS_TITLE', 'COM_CPANEL_MSG_HTACCESS_BODY', '', 'com_cpanel', 1, 'message', '', '', 'admin://components/com_admin/postinstall/htaccess.php', 'admin_postinstall_htaccess_condition', '3.4.0', 0),
+(6, 700, 'COM_CPANEL_MSG_ROBOTS_TITLE', 'COM_CPANEL_MSG_ROBOTS_BODY', '', 'com_cpanel', 1, 'message', '', '', '', '', '3.3.0', 0),
 (7, 700, 'COM_CPANEL_MSG_LANGUAGEACCESS340_TITLE', 'COM_CPANEL_MSG_LANGUAGEACCESS340_BODY', '', 'com_cpanel', 1, 'message', '', '', 'admin://components/com_admin/postinstall/languageaccess340.php', 'admin_postinstall_languageaccess340_condition', '3.4.1', 1);
 
 -- --------------------------------------------------------
@@ -1803,7 +1806,8 @@ CREATE TABLE IF NOT EXISTS `j3_session` (
 --
 
 INSERT INTO `j3_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-('t62bq1698ad7aa29a6khb5c8i6', 1, 0, '1449486490', '__default|a:8:{s:15:"session.counter";i:33;s:19:"session.timer.start";i:1449486195;s:18:"session.timer.last";i:1449486485;s:17:"session.timer.now";i:1449486490;s:22:"session.client.browser";s:108:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.73 Safari/537.36";s:8:"registry";O:24:"Joomla\\Registry\\Registry":2:{s:7:"\\0\\0\\0data";O:8:"stdClass":9:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:9:"com_users";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:4:"user";O:8:"stdClass":2:{s:2:"id";a:0:{}s:4:"data";N;}}}s:14:"com_categories";O:8:"stdClass":1:{s:10:"categories";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:9:"extension";s:11:"com_content";}}}s:9:"com_menus";O:8:"stdClass":1:{s:5:"items";O:8:"stdClass":3:{s:8:"menutype";s:8:"mainmenu";s:10:"limitstart";i:0;s:4:"list";a:4:{s:9:"direction";s:3:"asc";s:5:"limit";s:2:"20";s:8:"ordering";s:5:"a.lft";s:5:"start";d:0;}}}s:11:"com_plugins";O:8:"stdClass":1:{s:7:"plugins";O:8:"stdClass":4:{s:6:"filter";O:8:"stdClass":4:{s:6:"search";s:0:"";s:6:"access";i:0;s:7:"enabled";s:0:"";s:6:"folder";s:0:"";}s:8:"ordercol";s:6:"folder";s:9:"orderdirn";s:3:"asc";s:10:"limitstart";i:0;}}s:6:"global";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";i:20;}}s:11:"com_modules";O:8:"stdClass":1:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}}s:16:"com_joomlaupdate";O:8:"stdClass":3:{s:4:"file";N;s:8:"password";s:32:"ayCZ0MVZjjjfm9PWhECiLl9WsAn7FZI7";s:8:"filesize";i:40336;}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}}s:9:"separator";s:1:".";}s:4:"user";O:5:"JUser":29:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";i:148;s:4:"name";s:10:"Super User";s:8:"username";s:5:"admin";s:5:"email";s:16:"regger@mxsite.ru";s:8:"password";s:60:"$2y$10$GzTxoeslTHEgzg4yZjqy2OjAP3/RC51FXq9l0NU8vzyvVc3j2YBua";s:14:"password_clear";s:10:"MalinA##15";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-09-10 17:12:58";s:13:"lastvisitDate";s:19:"2015-12-07 11:03:33";s:10:"activation";s:1:"0";s:6:"params";s:102:"{"admin_style":"","admin_language":"ru-RU","language":"ru-RU","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:0;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:0:"";s:10:"resetCount";s:1:"0";s:12:"requireReset";i:0;s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":2:{s:7:"\\0\\0\\0data";O:8:"stdClass":6:{s:11:"admin_style";s:0:"";s:14:"admin_language";s:5:"ru-RU";s:8:"language";s:5:"ru-RU";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}s:9:"separator";s:1:".";}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:13:"\\0\\0\\0userHelper";O:18:"JUserWrapperHelper":0:{}s:10:"\\0\\0\\0_errors";a:0:{}s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";s:9:"password2";s:10:"MalinA##15";s:4:"tags";N;}s:13:"session.token";s:32:"8436f3201aafbf1c6f72fbce76131cbe";}__wf|a:1:{s:13:"session.token";s:32:"45fe1ceecd94dafc28df9af6a07b2216";}', 148, 'admin');
+('gp40sn8l6orjoi7qnnjs0gtvs5', 1, 0, '1465941791', '__default|a:8:{s:15:"session.counter";i:36;s:19:"session.timer.start";i:1465941032;s:18:"session.timer.last";i:1465941786;s:17:"session.timer.now";i:1465941790;s:22:"session.client.browser";s:108:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36";s:8:"registry";O:24:"Joomla\\Registry\\Registry":2:{s:7:"\\0\\0\\0data";O:8:"stdClass":6:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:15:"com_postinstall";O:8:"stdClass":1:{s:8:"messages";O:8:"stdClass":1:{s:3:"eid";s:3:"700";}}s:10:"com_config";O:8:"stdClass":1:{s:6:"config";O:8:"stdClass":1:{s:6:"global";O:8:"stdClass":1:{s:4:"data";a:91:{s:7:"offline";s:1:"0";s:15:"offline_message";s:130:"Сайт закрыт на техническое обслуживание.<br /> Пожалуйста, зайдите позже.";s:23:"display_offline_message";s:1:"1";s:13:"offline_image";s:0:"";s:8:"sitename";s:27:"Название сайта";s:6:"editor";s:3:"jce";s:7:"captcha";s:1:"0";s:10:"list_limit";s:2:"20";s:6:"access";s:1:"1";s:5:"debug";s:1:"0";s:10:"debug_lang";s:1:"0";s:6:"dbtype";s:5:"mysql";s:4:"host";s:9:"localhost";s:4:"user";s:4:"root";s:8:"password";s:0:"";s:2:"db";s:6:"demo12";s:8:"dbprefix";s:3:"j3_";s:9:"live_site";s:0:"";s:6:"secret";s:16:"MZpUTZa2SB1weg6J";s:4:"gzip";s:1:"0";s:15:"error_reporting";s:7:"default";s:7:"helpurl";s:90:"https://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}";s:8:"ftp_host";s:0:"";s:8:"ftp_port";s:0:"";s:8:"ftp_user";s:0:"";s:8:"ftp_pass";s:0:"";s:8:"ftp_root";s:0:"";s:10:"ftp_enable";s:1:"0";s:6:"offset";s:3:"UTC";s:10:"mailonline";s:1:"1";s:6:"mailer";s:4:"mail";s:8:"mailfrom";s:16:"regger@mxsite.ru";s:8:"fromname";s:27:"Название сайта";s:8:"sendmail";s:18:"/usr/sbin/sendmail";s:8:"smtpauth";s:1:"0";s:8:"smtpuser";s:0:"";s:8:"smtppass";s:0:"";s:8:"smtphost";s:9:"localhost";s:10:"smtpsecure";s:4:"none";s:8:"smtpport";s:2:"25";s:7:"caching";s:1:"0";s:13:"cache_handler";s:4:"file";s:9:"cachetime";s:2:"15";s:8:"MetaDesc";s:0:"";s:8:"MetaKeys";s:0:"";s:9:"MetaTitle";s:1:"1";s:10:"MetaAuthor";s:1:"0";s:11:"MetaVersion";s:1:"0";s:6:"robots";s:0:"";s:3:"sef";s:1:"1";s:11:"sef_rewrite";s:1:"1";s:10:"sef_suffix";s:1:"0";s:12:"unicodeslugs";s:1:"0";s:10:"feed_limit";s:2:"10";s:8:"log_path";s:28:"Z:\\home\\local.j3.ru\\www/logs";s:8:"tmp_path";s:27:"Z:\\home\\local.j3.ru\\www/tmp";s:8:"lifetime";s:2:"60";s:15:"session_handler";s:8:"database";s:16:"memcache_persist";s:1:"1";s:17:"memcache_compress";s:1:"0";s:20:"memcache_server_host";s:9:"localhost";s:20:"memcache_server_port";s:5:"11211";s:17:"memcached_persist";s:1:"1";s:18:"memcached_compress";s:1:"0";s:21:"memcached_server_host";s:9:"localhost";s:21:"memcached_server_port";s:5:"11211";s:12:"proxy_enable";s:1:"0";s:10:"proxy_host";s:0:"";s:10:"proxy_port";s:0:"";s:10:"proxy_user";s:0:"";s:10:"proxy_pass";s:0:"";s:10:"MetaRights";s:0:"";s:19:"sitename_pagetitles";s:1:"1";s:9:"force_ssl";s:1:"0";s:28:"session_memcache_server_host";s:9:"localhost";s:28:"session_memcache_server_port";s:5:"11211";s:29:"session_memcached_server_host";s:9:"localhost";s:29:"session_memcached_server_port";s:5:"11211";s:12:"frontediting";s:1:"1";s:10:"feed_email";s:6:"author";s:13:"cookie_domain";s:0:"";s:11:"cookie_path";s:0:"";s:8:"asset_id";i:1;s:7:"filters";a:9:{i:1;a:3:{s:11:"filter_type";s:2:"NH";s:11:"filter_tags";s:0:"";s:17:"filter_attributes";s:0:"";}i:9;a:3:{s:11:"filter_type";s:2:"BL";s:11:"filter_tags";s:0:"";s:17:"filter_attributes";s:0:"";}i:6;a:3:{s:11:"filter_type";s:2:"BL";s:11:"filter_tags";s:0:"";s:17:"filter_attributes";s:0:"";}i:7;a:3:{s:11:"filter_type";s:4:"NONE";s:11:"filter_tags";s:0:"";s:17:"filter_attributes";s:0:"";}i:2;a:3:{s:11:"filter_type";s:2:"NH";s:11:"filter_tags";s:0:"";s:17:"filter_attributes";s:0:"";}i:3;a:3:{s:11:"filter_type";s:2:"BL";s:11:"filter_tags";s:0:"";s:17:"filter_attributes";s:0:"";}i:4;a:3:{s:11:"filter_type";s:2:"BL";s:11:"filter_tags";s:0:"";s:17:"filter_attributes";s:0:"";}i:5;a:3:{s:11:"filter_type";s:2:"BL";s:11:"filter_tags";s:0:"";s:17:"filter_attributes";s:0:"";}i:8;a:3:{s:11:"filter_type";s:4:"NONE";s:11:"filter_tags";s:0:"";s:17:"filter_attributes";s:0:"";}}s:13:"redis_persist";s:1:"1";s:17:"redis_server_host";s:9:"localhost";s:17:"redis_server_port";s:4:"6379";s:17:"redis_server_auth";s:0:"";s:15:"redis_server_db";s:1:"0";s:11:"massmailoff";s:1:"0";s:5:"rules";a:10:{s:15:"core.login.site";a:9:{i:1;s:0:"";i:9;s:0:"";i:6;s:1:"1";i:7;s:0:"";i:2;s:1:"1";i:3;s:0:"";i:4;s:0:"";i:5;s:0:"";i:8;s:0:"";}s:16:"core.login.admin";a:9:{i:1;s:0:"";i:9;s:0:"";i:6;s:1:"1";i:7;s:0:"";i:2;s:0:"";i:3;s:0:"";i:4;s:0:"";i:5;s:0:"";i:8;s:0:"";}s:18:"core.login.offline";a:9:{i:1;s:0:"";i:9;s:0:"";i:6;s:1:"1";i:7;s:0:"";i:2;s:0:"";i:3;s:0:"";i:4;s:0:"";i:5;s:0:"";i:8;s:0:"";}s:10:"core.admin";a:9:{i:1;s:0:"";i:9;s:0:"";i:6;s:0:"";i:7;s:0:"";i:2;s:0:"";i:3;s:0:"";i:4;s:0:"";i:5;s:0:"";i:8;s:1:"1";}s:11:"core.manage";a:9:{i:1;s:0:"";i:9;s:0:"";i:6;s:0:"";i:7;s:1:"1";i:2;s:0:"";i:3;s:0:"";i:4;s:0:"";i:5;s:0:"";i:8;s:0:"";}s:11:"core.create";a:9:{i:1;s:0:"";i:9;s:0:"";i:6;s:1:"1";i:7;s:0:"";i:2;s:0:"";i:3;s:1:"1";i:4;s:0:"";i:5;s:0:"";i:8;s:0:"";}s:11:"core.delete";a:9:{i:1;s:0:"";i:9;s:0:"";i:6;s:1:"1";i:7;s:0:"";i:2;s:0:"";i:3;s:0:"";i:4;s:0:"";i:5;s:0:"";i:8;s:0:"";}s:9:"core.edit";a:9:{i:1;s:0:"";i:9;s:0:"";i:6;s:1:"1";i:7;s:0:"";i:2;s:0:"";i:3;s:0:"";i:4;s:1:"1";i:5;s:0:"";i:8;s:0:"";}s:15:"core.edit.state";a:9:{i:1;s:0:"";i:9;s:0:"";i:6;s:1:"1";i:7;s:0:"";i:2;s:0:"";i:3;s:0:"";i:4;s:0:"";i:5;s:1:"1";i:8;s:0:"";}s:13:"core.edit.own";a:9:{i:1;s:0:"";i:9;s:0:"";i:6;s:1:"1";i:7;s:0:"";i:2;s:0:"";i:3;s:1:"1";i:4;s:0:"";i:5;s:0:"";i:8;s:0:"";}}}}}}s:13:"com_installer";O:8:"stdClass":4:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";s:6:"manage";O:8:"stdClass":4:{s:6:"filter";O:8:"stdClass":5:{s:6:"search";s:3:"jce";s:9:"client_id";s:0:"";s:6:"status";s:0:"";s:4:"type";s:0:"";s:5:"group";s:0:"";}s:8:"ordercol";s:4:"name";s:9:"orderdirn";s:3:"asc";s:10:"limitstart";i:0;}s:12:"redirect_url";N;}s:6:"global";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";i:20;}}s:11:"com_modules";O:8:"stdClass":1:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}}}s:9:"separator";s:1:".";}s:4:"user";O:5:"JUser":28:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";s:3:"148";s:4:"name";s:10:"Super User";s:8:"username";s:5:"admin";s:5:"email";s:16:"regger@mxsite.ru";s:8:"password";s:60:"$2y$10$GzTxoeslTHEgzg4yZjqy2OjAP3/RC51FXq9l0NU8vzyvVc3j2YBua";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-09-10 17:12:58";s:13:"lastvisitDate";s:19:"2015-12-07 11:03:33";s:10:"activation";s:1:"0";s:6:"params";s:102:"{"admin_style":"","admin_language":"ru-RU","language":"ru-RU","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:12:"requireReset";s:1:"0";s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":2:{s:7:"\\0\\0\\0data";O:8:"stdClass":6:{s:11:"admin_style";s:0:"";s:14:"admin_language";s:5:"ru-RU";s:8:"language";s:5:"ru-RU";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}s:9:"separator";s:1:".";}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:13:"\\0\\0\\0userHelper";O:18:"JUserWrapperHelper":0:{}s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";}s:13:"session.token";s:32:"7c7d74f25532a3c807ce1dc632394e23";}__wf|a:1:{s:13:"session.token";s:32:"b475d471a9c9b480bbe9c55531ad5a58";}', 148, 'admin'),
+('hplt8de8ugd4nn649ibdkptsl1', 0, 1, '1465941180', '__default|a:7:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1465941180;s:18:"session.timer.last";i:1465941180;s:17:"session.timer.now";i:1465941180;s:22:"session.client.browser";s:108:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36";s:8:"registry";O:24:"Joomla\\Registry\\Registry":2:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}s:9:"separator";s:1:".";}s:4:"user";O:5:"JUser":26:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":2:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}s:9:"separator";s:1:".";}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:13:"\\0\\0\\0userHelper";O:18:"JUserWrapperHelper":0:{}s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, '');
 
 -- --------------------------------------------------------
 
@@ -2104,7 +2108,7 @@ CREATE TABLE IF NOT EXISTS `j3_update_sites` (
   `last_check_timestamp` bigint(20) DEFAULT '0',
   `extra_query` varchar(1000) DEFAULT '',
   PRIMARY KEY (`update_site_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=13 ;
 
 --
 -- Дамп данных таблицы `j3_update_sites`
@@ -2118,7 +2122,9 @@ INSERT INTO `j3_update_sites` (`update_site_id`, `name`, `type`, `location`, `en
 (6, 'Joomla! Update Component Update Site', 'extension', 'http://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 1449486451, ''),
 (8, 'JCE Editor Updates', 'extension', 'https://www.joomlacontenteditor.net/index.php?option=com_updates&view=update&format=xml&id=1&file=extension.xml', 1, 1449486451, ''),
 (9, 'Weblinks Update Site', 'extension', 'https://raw.githubusercontent.com/joomla-extensions/weblinks/master/manifest.xml', 1, 1449486451, ''),
-(10, 'FieldsAttach Update Site', 'extension', 'http://www.percha.com/update/fieldsattach-update_j3.xml', 1, 1449486451, '');
+(10, 'FieldsAttach Update Site', 'extension', 'http://www.percha.com/update/fieldsattach-update_j3.xml', 1, 1449486451, ''),
+(11, 'YOOtheme Installer', 'extension', 'http://yootheme.com/api/update/installer_yootheme_j33.xml', 1, 0, ''),
+(12, 'Widgetkit', 'extension', 'http://yootheme.com/api/update/widgetkit_j33.xml', 1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -2146,7 +2152,9 @@ INSERT INTO `j3_update_sites_extensions` (`update_site_id`, `extension_id`) VALU
 (6, 28),
 (8, 10030),
 (9, 801),
-(10, 10031);
+(10, 10031),
+(11, 10050),
+(12, 10051);
 
 -- --------------------------------------------------------
 
@@ -2219,7 +2227,7 @@ CREATE TABLE IF NOT EXISTS `j3_users` (
 --
 
 INSERT INTO `j3_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
-(148, 'Super User', 'admin', 'regger@mxsite.ru', '$2y$10$GzTxoeslTHEgzg4yZjqy2OjAP3/RC51FXq9l0NU8vzyvVc3j2YBua', 0, 1, '2014-09-10 17:12:58', '2015-12-07 11:03:33', '0', '{"admin_style":"","admin_language":"ru-RU","language":"ru-RU","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0, '', '', 0);
+(148, 'Super User', 'admin', 'regger@mxsite.ru', '$2y$10$GzTxoeslTHEgzg4yZjqy2OjAP3/RC51FXq9l0NU8vzyvVc3j2YBua', 0, 1, '2014-09-10 17:12:58', '2016-06-14 21:50:40', '0', '{"admin_style":"","admin_language":"ru-RU","language":"ru-RU","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -2419,20 +2427,17 @@ INSERT INTO `j3_wf_profiles` (`id`, `name`, `description`, `users`, `types`, `co
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `j3_widgetkit_widget`
+-- Структура таблицы `j3_widgetkit`
 --
 
-DROP TABLE IF EXISTS `j3_widgetkit_widget`;
-CREATE TABLE IF NOT EXISTS `j3_widgetkit_widget` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(255) NOT NULL,
-  `style` varchar(255) NOT NULL,
+DROP TABLE IF EXISTS `j3_widgetkit`;
+CREATE TABLE IF NOT EXISTS `j3_widgetkit` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `content` longtext NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `data` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
