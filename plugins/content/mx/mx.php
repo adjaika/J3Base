@@ -15,37 +15,47 @@ defined('_JEXEC') or die;
  */
 class plgContentmx extends JPlugin
 {
-	/**
-	 * Plugin that cloaks all emails in content from spambots via Javascript.
-	 *
-	 * @param	string	The context of the content being passed to the plugin.
-	 * @param	mixed	An object with a "text" property or the string to be cloaked.
-	 * @param	array	Additional parameters. See {@see plgEmailCloak()}.
-	 * @param	int		Optional page number. Unused. Defaults to zero.
-	 * @return	boolean	True on success.
-	 */
+	static function shortcode_simple_shortcode($params) { // Простой пример реализации шорткода, в переменной params передаются параметры шорткода в виде объекта
+		ob_start();
+		echo 'simple shortcode';
+		$content=ob_get_contents();
+		ob_end_clean();
+		return $content;
+	}
+
+	function shortcode($shortcode) { // Обработка строки, похожей на шорткод.
+		if (!preg_match('|^\[(\S+?)\s+?(\S?.*?)\]$|',$shortcode[1],$matches)) {
+			preg_match('|^\[(\S+?)\]$|',$shortcode[1],$matches);
+		}
+		$function='shortcode_'.$matches[1];
+		$paramsResultA=new stdClass();
+		if(is_callable(array($this,$function))) {
+			if (count($matches)>2) {
+				$params = $matches[2];
+				$params = str_replace('&nbsp;', ' ', $params);
+				while (strpos($params, '  ') !== false) {
+					$params = str_replace('  ', ' ', $params);
+				}
+				$params = str_replace(array('= ', ' ='), '=', $params);
+				$paramsA = explode(' ', $params);
+				foreach($paramsA as $item) {
+					$itemA=explode('=',$item);
+					if (count($itemA)<2) {continue;}
+					$itemA[1]=preg_replace('|^"|','',$itemA[1]);
+					$itemA[1]=preg_replace('|"$|','',$itemA[1]);
+					$paramsResultA->$itemA[0]=$itemA[1];
+				}
+			}
+			return self::$function($paramsResultA);
+		} else {
+			return $shortcode[0];
+		}
+	}
+
 	public function onContentPrepare($context, &$row, &$params, $page = 0)
 	{
         $app  = JFactory::getApplication();
         if ($app->isAdmin()) {return;}
-		//$row->text='modified text';
+		$row->text=preg_replace_callback('|(\[[^\]]+?\])|',array($this,'shortcode'),$row->text); // Поиск шорткодов в тексте
 	}
-
-	/**
-	 * Genarate a search pattern based on link and text.
-	 *
-	 * @param	string	The target of an email link.
-	 * @param	string	The text enclosed by the link.
-	 * @return	string	A regular expression that matches a link containing the parameters.
-	 */
-	
-	/**
-	 * Cloak all emails in text from spambots via Javascript.
-	 *
-	 * @param	string	The string to be cloaked.
-	 * @param	array	Additional parameters. Parameter "mode" (integer, default 1)
-	 * replaces addresses with "mailto:" links if nonzero.
-	 * @return	boolean	True on success.
-	 */
-	
 }
